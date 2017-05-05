@@ -1,6 +1,68 @@
 // Place all the styles related to the Top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-color: #fafafa;
+  font-size: 14px;
+  color: gray;
+}
+
+header {
+  background-color: white;
+  border-style: none none solid;
+  border-width: 1px;
+  border-bottom-color: #e0e0e0;
+  h2 {
+    color: black;
+  }
+  .site-name {
+    font-family: cursive;
+  }
+}
+.top-left {
+  padding-right: 70px;
+}
+
+.top-images {
+  position: relative;
+  display: inline-block;
+}
+
+.phone-image-1 {
+  color: black;
+  font-size: 700px;
+  position: relative;
+}
+
+.phone-image-2 {
+  color: #e0e0e0;
+  font-size: 700px;
+  position: absolute;
+  top: 15px;
+  left: 65px;
+}
+
+.login-form {
+  width: 380px;
+  margin: 260px auto;
+  h1 {
+    font-family: cursive;
+    font-weight: bold;
+    color: black;
+  }
+  p {
+    margin: 10px auto;
+  }
+}
+
+footer {
+  height: 75px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }

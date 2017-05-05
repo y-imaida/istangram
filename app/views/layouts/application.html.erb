@@ -8,8 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <% if user_signed_in? %>
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-3 col-xs-6">
+            <h2><%= fa_icon "instagram" %> | <span class="site-name">Istangram</span></h2>
+          </div>
+          <div class="col-sm-1 col-sm-offset-1 col-xs-3">
+            <h3><%= fa_icon "bandcamp" %></h2>
+          </div>
+          <div class="col-sm-1 col-xs-3">
+            <h3><%= fa_icon "user-o" %></h2>
+        </div>
+      </div>
+    </header>
+  <% end %>
+  <%= yield %>
 
-<%= yield %>
-
+  <footer class="text-center">
+    © 2017 ISTANGRAM
+  </footer>
 </body>
 </html>

@@ -1,7 +1,32 @@
-<div><%= fa_icon "mobile" %></div>
-<div><%= fa_icon "mobile" %></div>
-<div><%= fa_icon "facebook-official" %></div>
-<div style="color: light-blue"><%= fa_icon "twitter" %></div>
-<div class="login-form">
-  <span style="font-family: cursive; background-color: #ffffff">istangram</span>
+<div class="container-fluid">
+  <div class="row">
+    <div class="top-left col-sm-6 hidden-xs text-right">
+      <div class="top-images">
+        <span class="phone-image-1"><%= fa_icon "mobile" %></span>
+        <span class="phone-image-2"><%= fa_icon "mobile" %></span>
+      </div>
+    </div>
+    <div class="login-form col-sm-6 text-center" id="top-right">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h1>Istangram</h1>
+          <p>友達の写真をチェックしよう</p>
+          <div class="btn btn-block btn-primary">
+            <%= fa_icon "facebook-official", text: "Facebookでログイン" %>
+          </div>
+          <div class="btn btn-block btn-primary">
+            <%= fa_icon "twitter", text: "Twitterでログイン" %> 
+          </div>
+          <p>または</p>
+          <div class="btn btn-block btn-primary">
+            ユーザー登録する
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          アカウントをお持ちですか？ <a href="#">ログインする</a>
+        </div>
+      </div>
+  </div>
 </div>
