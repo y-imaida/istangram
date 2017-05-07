@@ -9,7 +9,7 @@ html {
 body {
   background-color: #fafafa;
   font-size: 14px;
-  color: gray;
+  // color: gray;
 }
 
 header {
@@ -19,11 +19,34 @@ header {
   border-bottom-color: #e0e0e0;
   h2 {
     color: black;
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    a:hover {
+      color: black;
+      text-decoration: none;
+    }
   }
   .site-name {
     font-family: cursive;
   }
+  h3 {
+    a {
+      color: gray;
+    }
+    a:hover {
+      color: gray;
+    }
+  }
 }
+
+.flash-msg {
+  width: 50%;
+  text-align: center;
+  margin: 20px auto;
+}
+
 .top-left {
   padding-right: 70px;
 }
@@ -48,6 +71,7 @@ header {
 }
 
 .login-form {
+  color: gray;
   width: 380px;
   margin: 260px auto;
   h1 {
@@ -60,7 +84,49 @@ header {
   }
 }
 
+.user-registration-form {
+  margin: 50px 0 0 0;
+  h1 {
+    font-family: cursive;
+    font-weight: bold;
+  }
+  .field {
+    margin: 10px auto;
+  }
+  .actions {
+    margin: 10px auto;
+  }
+}
+
+.user-login-form {
+  margin: 50px 0 0 0;
+  h1 {
+    font-family: cursive;
+    font-weight: bold;
+  }
+  .field {
+    margin: 10px auto;
+  }
+  .actions {
+    margin: 10px auto;
+  }
+}
+
+.user-edit-form {
+  padding-bottom: 100px;
+  img {
+    max-width: 100%;
+  }
+  .field {
+    margin: 10px auto;
+  }
+  .actions {
+    margin: 10px auto;
+  }
+}
+
 footer {
+  color: gray;
   height: 75px;
   width: 100%;
   position: absolute;

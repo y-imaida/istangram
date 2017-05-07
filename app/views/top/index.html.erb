@@ -1,3 +1,19 @@
+<% if notice.present? %>
+  <div class="flash-msg">
+    <div class="alert alert-info" role="alert">
+      <%= notice %>
+    </div>
+  </div>
+<% end %>
+
+<% if alert.present? %>
+  <div class="flash-msg">
+    <div class="alert alert-warning" role="alert">
+      <%= alert %>
+    </div>
+  </div>
+<% end %>
+
 <div class="container-fluid">
   <div class="row">
     <div class="top-left col-sm-6 hidden-xs text-right">
@@ -7,26 +23,40 @@
       </div>
     </div>
     <div class="login-form col-sm-6 text-center" id="top-right">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h1>Istangram</h1>
-          <p>友達の写真をチェックしよう</p>
-          <div class="btn btn-block btn-primary">
-            <%= fa_icon "facebook-official", text: "Facebookでログイン" %>
-          </div>
-          <div class="btn btn-block btn-primary">
-            <%= fa_icon "twitter", text: "Twitterでログイン" %> 
-          </div>
-          <p>または</p>
-          <div class="btn btn-block btn-primary">
-            ユーザー登録する
+      <% if user_signed_in? %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h1>Istangram</h1>
+            <p>友達の写真をチェックしよう</p>
+            <%= link_to posts_path, class: "btn btn-block btn-primary" do %>
+              <%= fa_icon "bandcamp", text: "友達の写真一覧を見る" %>
+            <% end %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-block btn-default" do %>
+              <%= fa_icon "sign-out", text: "ログアウト" %>
+            <% end %>
           </div>
         </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          アカウントをお持ちですか？ <a href="#">ログインする</a>
+      <% else %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h1>Istangram</h1>
+            <p>友達の写真をチェックしよう</p>
+            <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-block btn-primary" do %>
+              <%= fa_icon "facebook-official", text: "Facebookでログイン" %>
+            <% end %>
+            <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-block btn-primary" do %>
+              <%= fa_icon "twitter", text: "Twitterでログイン" %>
+            <% end %>
+            <p>または</p>
+            <%= link_to "ユーザー登録する", new_user_registration_path, class: "btn btn-block btn-primary" %>
+          </div>
         </div>
-      </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            アカウントをお持ちですか？ <%= link_to "ログインする", new_user_session_path %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
