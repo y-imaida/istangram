@@ -1,3 +1,45 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.new-post-button {
+  margin: 15px auto;
+}
+
+.pictures-list {
+  padding-bottom: 100px;
+}
+
+.posts-panels {
+  .panel-body {
+    padding: 15px 0px;
+  }
+}
+
+.update-timestamp {
+  margin: auto 5px;
+}
+
+.profile-image {
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: 5px;
+  }
+}
+.username {
+  font-weight: bold;
+  margin: auto 5px;
+}
+.edit-pic-links {
+  a {
+    color: gray;
+  }
+  a:hover {
+    color: gray;
+  }
+}
+
+.new-and-edit-form {
+  padding-bottom: 100px;
+}

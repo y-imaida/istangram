@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
          :omniauthable
 
+  has_many :posts
+
   mount_uploader :avatar, AvatarUploader
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)

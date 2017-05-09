@@ -1,1 +1,46 @@
-<h1>投稿一覧</h1>
+<% if notice.present? %>
+  <div class="flash-msg">
+    <div class="alert alert-info" role="alert">
+      <%= notice %>
+    </div>
+  </div>
+<% end %>
+
+<div class="new-post-button text-center">
+    <%= link_to new_post_path, class: "btn btn-lg btn-primary" do %>
+      <%= fa_icon "upload", text: "写真を投稿する" %>
+    <% end %>
+</div>
+<div class="pictures-list container-fluid">
+  <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="posts-panels panel panel-default">
+          <div class="panel-body">
+            <p class="update-timestamp"><%= post.updated_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+            <div>
+              <span class="profile-image"><%= profile_img(post.user) %></span>
+              <span class="username"><%= post.user.name %></span>
+              <% if current_user.id == post.user.id %>
+                <span class="edit-pic-links pull-right">
+                <%= link_to edit_post_path(post.id) do %>
+                  <% fa_icon("exchange fw 2x") %>
+                <% end %>
+                <%= link_to post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？'} do %>
+                  <% fa_icon("trash-o fw 2x") %>
+                <% end %>
+                </span>
+              <% end %>
+            </div>
+            <p><%= image_tag(post.picture, :width => '100%') %></p>
+            <p><span class="username"><%= post.user.name %></span> <%= post.title %></p>
+            <p>＜ユーザー名＞ コメント <span class="pull-right"><%= fa_icon "times fw 2x" %></span></p>
+            <p>・・・</p>
+            <hr>
+            <p><%= fa_icon "comment-o fw 2x" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
