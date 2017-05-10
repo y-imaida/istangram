@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   }
   resources :posts, only:[:index, :new, :create, :edit, :update, :destroy]
 
+  resources :comments, only:[:new, :create, :edit, :update, :destroy]
+
   root 'top#index'
 
   if Rails.env.development?

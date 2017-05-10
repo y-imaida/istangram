@@ -34,13 +34,33 @@
             </div>
             <p><%= image_tag(post.picture, :width => '100%') %></p>
             <p><span class="username"><%= post.user.name %></span> <%= post.title %></p>
-            <p>＜ユーザー名＞ コメント <span class="pull-right"><%= fa_icon "times fw 2x" %></span></p>
-            <p>・・・</p>
+            <% post.comments.order(created_at: :desc).each do |c| %>
+              <p>
+              <span class="username"><%= c.user.name %></span><%= c.content %>
+                <% if current_user.id == c.user.id %>
+                  <span class="edit-comment-links pull-right">
+                    <%= link_to edit_comment_path(c.id, post) do %>
+                      <%= fa_icon "pencil fw lg" %>
+                    <% end %>
+                    <%= link_to comment_path(c.id), method: :delete, data: { confirm: '本当に削除していいですか？' } do %>
+                      <%= fa_icon "times fw lg" %>
+                    <% end %>
+                  </span>
+                <% end %>
+              </p>
+            <% end %>
             <hr>
-            <p><%= fa_icon "comment-o fw 2x" %></p>
+            <span class="post-comment-link">
+            <%= link_to new_comment_path(post) do %>
+              <%= fa_icon "comment-o fw 2x" %>
+            <% end %>
+            </span>
           </div>
         </div>
       </div>
     </div>
   <% end %>
+  <div id="page-top-btn" class="page-top-btn">
+    <p><a class="move-page-top" id="move-page-top"><%= fa_icon "arrow-circle-o-up fw 4x" %></a></p>
+  </div>
 </div>

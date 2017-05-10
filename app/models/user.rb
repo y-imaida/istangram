@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable
 
   has_many :posts
+  has_many :comments, through: :posts
 
   mount_uploader :avatar, AvatarUploader
 

@@ -1,0 +1,34 @@
+<% if @comment.errors.any? %>
+  <div class="flash-msg alert alert-warning" role="alert">
+    <h2><%= @comment.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="new-and-edit-form col-sm-4 col-sm-offset-4">
+  <div class="comments-panels panel panel-default">
+    <div class="panel-body text-center">
+      <div>
+        <%= form_for(@comment) do |f| %>
+          <%= f.label '写真', style: "margin: 15px auto 5px;" %><br>
+          <%= image_tag(Post.find(@post_id).picture, :width => '100%') %>
+          <div class="comment-field">
+            <%= f.label 'コメント' %><br>
+            <%= f.text_field :content, :class => "form-control" %><br>
+            <%= f.hidden_field :post_id %>
+          </div>
+          <%= f.submit :class => "btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <%= link_to posts_path, class: "btn btn-default" do %>
+      <%= fa_icon "arrow-circle-o-left", text: "写真の一覧へ戻る" %>
+    <% end %>
+  </div>
+</div>

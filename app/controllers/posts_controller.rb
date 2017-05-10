@@ -33,6 +33,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+    Comment.where(post_id: @post.id).delete_all
+
     redirect_to posts_path, notice: "投稿を削除しました！"
   end
 

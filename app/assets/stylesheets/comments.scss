@@ -1,0 +1,25 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.comments-panels {
+  .panel-body {
+    padding: 15px 0px;
+    .comment-field {
+      margin: 10px 20px 0px;
+    }
+  }
+}
+
+.post-comment-link {
+  margin: auto 5px;
+  a {
+    color: gray;
+  }
+  a:hover {
+    color: gray;
+  }
+}
+
+.new-and-edit-form {
+  padding-bottom: 100px;
+}
