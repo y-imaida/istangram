@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
          :omniauthable
 
+  validates :name, presence: true
+
   has_many :posts
-  has_many :comments, through: :posts
+  has_many :comments
 
   mount_uploader :avatar, AvatarUploader
 

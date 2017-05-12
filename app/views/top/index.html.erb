@@ -29,10 +29,10 @@
             <h1>Istangram</h1>
             <p>友達の写真をチェックしよう</p>
             <%= link_to posts_path, class: "btn btn-block btn-primary" do %>
-              <%= fa_icon "bandcamp", text: "友達の写真一覧を見る" %>
+              <%= fa_icon "compass fw", text: "友達の写真一覧を見る" %>
             <% end %>
             <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-block btn-default" do %>
-              <%= fa_icon "sign-out", text: "ログアウト" %>
+              <%= fa_icon "sign-out fw", text: "ログアウト" %>
             <% end %>
           </div>
         </div>
@@ -42,10 +42,10 @@
             <h1>Istangram</h1>
             <p>友達の写真をチェックしよう</p>
             <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-block btn-primary" do %>
-              <%= fa_icon "facebook-official", text: "Facebookでログイン" %>
+              <%= fa_icon "facebook-official fw", text: "Facebookでログイン" %>
             <% end %>
             <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-block btn-primary" do %>
-              <%= fa_icon "twitter", text: "Twitterでログイン" %>
+              <%= fa_icon "twitter fw", text: "Twitterでログイン" %>
             <% end %>
             <p>または</p>
             <%= link_to "ユーザー登録する", new_user_registration_path, class: "btn btn-block btn-primary" %>

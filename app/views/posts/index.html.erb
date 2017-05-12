@@ -8,7 +8,7 @@
 
 <div class="new-post-button text-center">
     <%= link_to new_post_path, class: "btn btn-lg btn-primary" do %>
-      <%= fa_icon "upload", text: "写真を投稿する" %>
+      <%= fa_icon "upload fw", text: "写真を投稿する" %>
     <% end %>
 </div>
 <div class="pictures-list container-fluid">
@@ -26,7 +26,7 @@
                 <%= link_to edit_post_path(post.id) do %>
                   <% fa_icon("exchange fw 2x") %>
                 <% end %>
-                <%= link_to post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？'} do %>
+                <%= link_to post_path(post.id), method: :delete, data: { confirm: '写真を削除してもいいですか？'} do %>
                   <% fa_icon("trash-o fw 2x") %>
                 <% end %>
                 </span>
@@ -42,7 +42,7 @@
                     <%= link_to edit_comment_path(c.id, post) do %>
                       <%= fa_icon "pencil fw lg" %>
                     <% end %>
-                    <%= link_to comment_path(c.id), method: :delete, data: { confirm: '本当に削除していいですか？' } do %>
+                    <%= link_to comment_path(c.id), method: :delete, data: { confirm: 'コメントを削除してもいいですか？' } do %>
                       <%= fa_icon "times fw lg" %>
                     <% end %>
                   </span>
